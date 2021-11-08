@@ -174,7 +174,8 @@ section {
 /* all similar styling code */
 .about,
 .services,
-.skills {
+.skills,
+.teams {
   font-family: "Poppins", sans-serif;
 }
 section {
@@ -210,14 +211,17 @@ section .title::after {
   transform: translateX(-50%);
 }
 /* services section styling */
-.services {
+.services,
+.teams {
   color: #fff;
   background: #111;
 }
-.services .title::before {
+.services .title::before,
+.teams .title::before {
   background: #fff;
 }
-.services .title::after {
+.services .title::after,
+.teams .title::after {
   background: #111;
   content: "what i provide";
 }
@@ -297,59 +301,140 @@ section .title::after {
   font-size: 18px;
 }
 .skills .skills-content .right .line {
-  height: 5px;
+  height: 15px;
   width: 100%;
   background: lightgray;
   position: relative;
 }
-.skills .skills-content .right .html::before {
+/* .skills .skills-content .right .html::before {
   content: "";
   position: absolute;
   height: 100%;
   width: 90%;
   left: 0;
   top: 0;background: crimson;
-}
-.skills .skills-content .right .html::before {
+} */
+.skills .skills-content .right .html:hover:before {
   content: "";
   position: absolute;
   height: 100%;
   width: 90%;
   left: 0;
-  top: 0;background: crimson;
+  top: 0;
+  background: crimson;
+  transition: all 0.03s ease;
 }
-.skills .skills-content .right .css::before {
+.skills .skills-content .right .css:hover:before {
   content: "";
   position: absolute;
   height: 100%;
   width: 80%;
   left: 0;
-  top: 0;background: crimson;
+  top: 0;
+  background: crimson;
+  transition: all 3s ease;
 }
-.skills .skills-content .right .js::before {
+.skills .skills-content .right .js:hover:before {
   content: "";
   position: absolute;
   height: 100%;
   width: 60%;
   left: 0;
-  top: 0;background: crimson;
+  top: 0;
+  background: crimson;
+  transition: all 3s ease;
 }
-.skills .skills-content .right .vuejs::before {
+.skills .skills-content .right .vuejs:hover:before {
   content: "";
   position: absolute;
   height: 100%;
   width: 70%;
   left: 0;
-  top: 0;background: crimson;
+  top: 0;
+  background: crimson;
+  transition: all 3s ease;
 }
-.skills .skills-content .right .mysql::before {
+.skills .skills-content .right .mysql:hover:before {
   content: "";
   position: absolute;
   height: 100%;
   width: 50%;
   left: 0;
-  top: 0;background: crimson;
+  top: 0;
+  background: crimson;
+  transition: all 3s ease;
 }
+
+/* teams section styling */
+.teams .title::after {
+  content: "who with me";
+}
+.teams .carousel .card {
+  background: #222;
+  border-radius: 6px;
+  padding: 25px 35px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.teams .carousel .card:hover {
+  background: crimson;
+}
+.teams .carousel .card .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.teams .carousel .card:hover .box {
+  transform: scale(1.05);
+}
+.teams .carousel .card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+.teams .carousel .card img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid crimson;
+  transition: all 0.3s ease;
+}
+.teams .carousel .card:hover img {
+  border-color: #fff;
+}
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+.owl-dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 15px;
+  outline: none!important;
+  border-radius: 50%;
+  border: 2px solid #fff!important;
+  transition: all 0.3s ease;
+}
+.owl-dot.active {
+  width: 35px;
+  border-radius: 14px;
+}
+.owl-dot.active, .owl-dot:hover {
+  background: #fff!important;
+}
+
+/* contact section styling */
+.contact .title::after {
+  content: "get in touch";
+}
+
+
+
+
+
 
 /* responsive media query start */
 @media (max-width: 1300px) {
@@ -451,7 +536,6 @@ section .title::after {
   .services .services-content .card {
     width: 100%;
   }
-
 }
 @media (max-width: 500px) {
   .home .home-content .text-2 {
